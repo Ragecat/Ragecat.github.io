@@ -1068,25 +1068,29 @@ var keystones = ['Acrobatics',
 'Zealots Oath',]
 
 
-var UniqueNum = document.getElementById("uniquenum").value;
-var KeystoneNum = document.getElementById("keystonenum").value;
 
 
 
-
-
-
-
-function randomizeIt(theArray) {
-	var upperBound = theArray.length;
-	var theChoice = Math.floor((Math.random() * upperBound) + 1);
-	return theArray[theChoice-1];
+function randomizeIt(theArray, howMany) {
+    var upperBound = theArray.length;
+    var returnValue = "";
+    for(i = 0; i < howMany; i++){
+        var theChoice = Math.floor((Math.random() * upperBound) + 1);
+        returnValue += ("\n" + theArray[theChoice-1]);}
+    return returnValue;
 };
 
 
+
+
+
+
+
 function Randomize() {
-    document.getElementById("randomize1").innerHTML = "Class: " + randomizeIt(classes);
-    document.getElementById("randomize2").innerHTML = "Skill: " + randomizeIt(skills);
-    document.getElementById("randomize3").innerHTML = "Unique: " + randomizeIt(uniques);
-    document.getElementById("randomize4").innerHTML = "Keystone: " + randomizeIt(keystones);
+    document.getElementById("randomize1").innerHTML = "Class: " + randomizeIt(classes, 1);
+    document.getElementById("randomize2").innerHTML = "Skill: " + randomizeIt(skills, 1);
+    var UniqueNum = document.getElementById("uniquenum").value;
+    document.getElementById("randomize3").innerHTML = "Unique: " + randomizeIt(uniques, UniqueNum);
+    var KeystoneNum = document.getElementById("keystonenum").value;
+    document.getElementById("randomize4").innerHTML = "Keystone: " + randomizeIt(keystones, KeystoneNum);
 }
