@@ -1068,11 +1068,21 @@ var keystones = ['Acrobatics',
 'Zealots Oath',]
 
 
+var UniqueNum = document.getElementById("uniquenum").value;
+var KeystoneNum = document.getElementById("keystonenum").value;
+
+
+
+
+
+
+
 function randomizeIt(theArray) {
 	var upperBound = theArray.length;
 	var theChoice = Math.floor((Math.random() * upperBound) + 1);
 	return theArray[theChoice-1];
 };
+
 
 function Randomize() {
     document.getElementById("randomize1").innerHTML = "Class: " + randomizeIt(classes);

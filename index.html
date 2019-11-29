@@ -4,23 +4,56 @@
         <title>PoE Build Randomizer</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <link rel="stylesheet" href="styles.css">
         <link href="styles.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <h1>
             <div class="page-content">
-                    <div class="content-block">
-                        <div id="yourbuild">
-                                <div id="textdisplay"><p><span id="randomize1"></span></p></div>
-                                <div id="textdisplay"><p><span id="randomize2"></span></p></div>
-                                <div id="textdisplay"><p><span id="randomize3"></span></p></div>
-                                <div id="textdisplay"><p><span id="randomize4"></span></p></div>
-                            </h1>
-                            <h2>
+                 <div class="content-block">
+                     <div id="yourbuild">
+                            <div id="randomize1"></div>
+                            <div id="randomize2"></div>
+                            <div id="randomize3"></div>
+                            <div id="randomize4"></div>
+                                    <script>$(document).ready(function() {
+                                    $("#unique").click(function() {
+                                        if($('#unique:checked').length) {
+                                            $("#randomize3").show(300);
+                                        } else {
+                                            $("#randomize3").hide(300);
+                                        }
+                                    });
+                                
+                                    $("#keystone").click(function() {
+                                        if($('#keystone:checked').length) {
+                                            $("#randomize4").show(300);
+                                        } else {
+                                            $("#randomize4").hide(300);
+                                        }
+                                    });
+                                })</script>
+                                
+         </h1>
+    <h2>
 		<div>
-			<button class="button"onclick="Randomize();">Get Build</button>
-		</div></h2>
+            <button class="button"onclick="Randomize();">Get Build</button>
+
+        </div>
+    </h2>
+
+    <h3>           
+            Unique(s) <input type="number" name="unique" id="uniquenum" min="1" max="10" value="1"> Enabled <input type="checkbox" name="unique" id="unique" checked>
+
+
+        <div>        
+
+                Keystone(s) <input type="number" name="keystone" id="keystonenum" min="1" max="26" value="1"> Enabled <input type="checkbox" name="keystone" id="keystone" checked>
+
+        </div>
+    </h3>
+
 		<script type="text/javascript" src="app.js"></script>
     </body>
 </html>
