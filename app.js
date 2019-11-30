@@ -1068,29 +1068,25 @@ var keystones = ['Acrobatics',
 'Zealots Oath',]
 
 
-
-
-
 function randomizeIt(theArray, howMany) {
     var upperBound = theArray.length;
     var returnValue = "";
-    for(i = 0; i < howMany; i++){
+    for(i = 0; i < howMany; i++) {
         var theChoice = Math.floor((Math.random() * upperBound) + 1);
-        returnValue += ("\n" + theArray[theChoice-1]);}
+        returnValue += (theArray[theChoice-1]);
+        if (i != (howMany - 1)) {
+            returnValue += ", "
+        };
+    };
     return returnValue;
 };
-
-
-
-
-
 
 
 function Randomize() {
     document.getElementById("randomize1").innerHTML = "Class: " + randomizeIt(classes, 1);
     document.getElementById("randomize2").innerHTML = "Skill: " + randomizeIt(skills, 1);
     var UniqueNum = document.getElementById("uniquenum").value;
-    document.getElementById("randomize3").innerHTML = "Unique: " + randomizeIt(uniques, UniqueNum);
+    document.getElementById("randomize3").innerHTML = "Unique(s): "+randomizeIt(uniques, UniqueNum);
     var KeystoneNum = document.getElementById("keystonenum").value;
-    document.getElementById("randomize4").innerHTML = "Keystone: " + randomizeIt(keystones, KeystoneNum);
+    document.getElementById("randomize4").innerHTML = "Keystone(s): " + randomizeIt(keystones, KeystoneNum);
 }
