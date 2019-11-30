@@ -1,3 +1,46 @@
+
+
+$(document).ready(function() {
+    $("#unique").click(function() {
+        if($('#unique:checked').length) {
+            $("#randomize3").show(300);
+        } else {
+            $("#randomize3").hide(300);
+        }
+    });
+
+    $("#keystone").click(function() {
+        if($('#keystone:checked').length) {
+            $("#randomize4").show(300);
+        } else {
+            $("#randomize4").hide(300);
+        }
+    });
+})
+
+function randomizeIt(theArray, howMany) {
+    var upperBound = theArray.length;
+    var returnValue = "";
+    for(i = 0; i < howMany; i++) {
+        var theChoice = Math.floor((Math.random() * upperBound) + 1);
+        returnValue += (theArray[theChoice-1]);
+        if (i != (howMany - 1)) {
+            returnValue += ", "
+        };
+    };
+    return returnValue;
+};
+
+
+function Randomize() {
+    document.getElementById("randomize1").innerHTML = "Class: " + randomizeIt(classes, 1);
+    document.getElementById("randomize2").innerHTML = "Skill: " + randomizeIt(skills, 1);
+    var UniqueNum = document.getElementById("uniquenum").value;
+    document.getElementById("randomize3").innerHTML = "Unique(s): "+randomizeIt(uniques, UniqueNum);
+    var KeystoneNum = document.getElementById("keystonenum").value;
+    document.getElementById("randomize4").innerHTML = "Keystone(s): " + randomizeIt(keystones, KeystoneNum);
+}
+
 var classes = ['Slayer',
 'Gladiator',
 'Champion',
@@ -1066,27 +1109,3 @@ var keystones = ['Acrobatics',
 'Vaal Pact',
 'WickedWard',
 'Zealots Oath',]
-
-
-function randomizeIt(theArray, howMany) {
-    var upperBound = theArray.length;
-    var returnValue = "";
-    for(i = 0; i < howMany; i++) {
-        var theChoice = Math.floor((Math.random() * upperBound) + 1);
-        returnValue += (theArray[theChoice-1]);
-        if (i != (howMany - 1)) {
-            returnValue += ", "
-        };
-    };
-    return returnValue;
-};
-
-
-function Randomize() {
-    document.getElementById("randomize1").innerHTML = "Class: " + randomizeIt(classes, 1);
-    document.getElementById("randomize2").innerHTML = "Skill: " + randomizeIt(skills, 1);
-    var UniqueNum = document.getElementById("uniquenum").value;
-    document.getElementById("randomize3").innerHTML = "Unique(s): "+randomizeIt(uniques, UniqueNum);
-    var KeystoneNum = document.getElementById("keystonenum").value;
-    document.getElementById("randomize4").innerHTML = "Keystone(s): " + randomizeIt(keystones, KeystoneNum);
-}
