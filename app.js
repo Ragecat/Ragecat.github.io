@@ -16,6 +16,13 @@ $(document).ready(function() {
             $("#randomize4").hide(300);
         }
     });
+    $("#skill").click(function() {
+        if($('#skill:checked').length) {
+            $("#randomize2").show(300);
+        } else {
+            $("#randomize2").hide(300);
+        }
+    });
 })
 
 function randomizeIt(theArray, howMany) {
