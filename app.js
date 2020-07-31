@@ -34,7 +34,8 @@ function randomizeIt(theArray, howMany) {
 
 function Randomize() {
     document.getElementById("randomize1").innerHTML = "Class: " + randomizeIt(classes, 1);
-    document.getElementById("randomize2").innerHTML = "Skill: " + randomizeIt(skills, 1);
+    var SkillNum = document.getElementById("skillnum").value;
+    document.getElementById("randomize2").innerHTML = "Skill: " + randomizeIt(skills, SkillNum);
     var UniqueNum = document.getElementById("uniquenum").value;
     document.getElementById("randomize3").innerHTML = "Unique(s): "+randomizeIt(uniques, UniqueNum);
     var KeystoneNum = document.getElementById("keystonenum").value;
