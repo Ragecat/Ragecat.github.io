@@ -1,34 +1,42 @@
 @font-face {
-    font-family: 'BleedingCowboys';
-    src: url('res/fonts/Bleeding_Cowboys.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'BleedingCowboys';
+	src: url('res/fonts/Bleeding_Cowboys.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
-#newfont{
-    font-family:'BleedingCowboys';
+
+#newfont {
+	font-family: 'BleedingCowboys';
 }
-body
- {
-    background-image: url("res/images/gamer.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-  }
 
-  .imageMarquee
-  {
-      height: 50px; /* Any size you want */ 
-      background-image:url("res/images/tony.png");
-      animation: imageMovement 5s linear infinite;
-      vertical-align: middle;
-  }
-  
-  @keyframes imageMovement {
-      100% {
-          background-position-x: 369px; /* width of the image */
-      }        
-  }
+body {
+	background-image: url("res/images/gamer.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
 
+.imageMarquee {
+	height: 50px;
+	/* Any size you want */
+	background-image: url("res/images/tony.png");
+	animation: imageMovement 5s linear infinite;
+	vertical-align: middle;
+	background-position: center;
+	margin: 0;
+}
+
+@keyframes imageMovement {
+	100% {
+		background-position-x: 369px;
+		/* width of the image */
+	}
+}
+
+.randolinky {
+	text-align: center;
+
+}
 
 .fire {
 	margin: 50px auto;
@@ -36,15 +44,16 @@ body
 	max-width: 1000px;
 	height: 500px;
 
-	background-position: center center;
+	background-position: top top;
 	background-size: 1000px 200px;
 	border-radius: 10px;
 	font-family: 'BleedingCowboys';
-	overflow: hidden;
-    text-align: center;
+	overflow: visible;
+	text-align: center;
 	vertical-align: middle;
 
 }
+
 .fire:before {
 	content: '';
 	display: inline-block;
@@ -56,16 +65,16 @@ body
 	display: inline-block;
 	margin: 0;
 
-    color: rgb(255, 115, 0);
-    font-size: 200px;
+	color: rgb(255, 115, 0);
+	font-size: 200px;
 	line-height: 50px;
 	min-width: 50px;
 	outline: none;
 	vertical-align: middle;
-    
+
 	text-shadow:
-        0 3px 20px red,
-        0 0 20px red,
+		0 3px 20px red,
+		0 0 20px red,
 		0 0 10px orange,
 		4px -5px 6px yellow,
 		-4px -10px 10px yellow,
@@ -74,34 +83,48 @@ body
 }
 
 @keyframes Blazing {
-	0%   { text-shadow: 0 3px 20px red, 0 0 20px red,
-		0 0 10px orange,
-		0 0 0 yellow,
-		0 0 5px yellow,
-		-2px -5px 5px yellow,
-		4px -10px 10px yellow; }
-	25%   { text-shadow: 0 3px 20px red, 0 0 30px red,
-		0 0 20px orange,
-		0 0 5px yellow,
-		-2px -5px 5px yellow,
-		3px -10px 10px yellow,
-		-4px -15px 20px yellow; }
-	50%   { text-shadow: 0 3px 20px red, 0 0 20px red,
-		0 -5px 10px orange,
-		-2px -5px 5px yellow,
-		3px -10px 10px yellow,
-		-4px -15px 20px yellow,
-		2px -20px 30px rgba(255,255,0,0.5); }
-	75%   { text-shadow: 0 3px 20px red, 0 0 20px red,
-		0 -5px 10px orange,
-		3px -5px 5px yellow,
-		-4px -10px 10px yellow,
-		2px -20px 30px rgba(255,255,0,0.5),
-		0px -25px 40px rgba(255,255,0,0)}
-	100%   { text-shadow: 0 3px 20px red, 0 0 20px red,
-		0 0 10px orange,
-		0 0 0 yellow,
-		0 0 5px yellow,
-		-2px -5px 5px yellow,
-		4px -10px 10px yellow; }
+	0% {
+		text-shadow: 0 3px 20px red, 0 0 20px red,
+			0 0 10px orange,
+			0 0 0 yellow,
+			0 0 5px yellow,
+			-2px -5px 5px yellow,
+			4px -10px 10px yellow;
+	}
+
+	25% {
+		text-shadow: 0 3px 20px red, 0 0 30px red,
+			0 0 20px orange,
+			0 0 5px yellow,
+			-2px -5px 5px yellow,
+			3px -10px 10px yellow,
+			-4px -15px 20px yellow;
+	}
+
+	50% {
+		text-shadow: 0 3px 20px red, 0 0 20px red,
+			0 -5px 10px orange,
+			-2px -5px 5px yellow,
+			3px -10px 10px yellow,
+			-4px -15px 20px yellow,
+			2px -20px 30px rgba(255, 255, 0, 0.5);
+	}
+
+	75% {
+		text-shadow: 0 3px 20px red, 0 0 20px red,
+			0 -5px 10px orange,
+			3px -5px 5px yellow,
+			-4px -10px 10px yellow,
+			2px -20px 30px rgba(255, 255, 0, 0.5),
+			0px -25px 40px rgba(255, 255, 0, 0)
+	}
+
+	100% {
+		text-shadow: 0 3px 20px red, 0 0 20px red,
+			0 0 10px orange,
+			0 0 0 yellow,
+			0 0 5px yellow,
+			-2px -5px 5px yellow,
+			4px -10px 10px yellow;
+	}
 }
