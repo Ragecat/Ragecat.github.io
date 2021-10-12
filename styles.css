@@ -39,7 +39,7 @@ body
 	background-size: 1000px 200px;
 	border-radius: 10px;
 	font-family: 'BleedingCowboys';
-	overflow: hidden;
+	overflow: visible;
     text-align: center;
 	vertical-align: middle;
 
